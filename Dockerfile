@@ -20,7 +20,6 @@ RUN apt-get update && \
         libatlas-base-dev \
         gfortran \
         webp \ 
-        qt5-default \
         libvtk6-dev \ 
         zlib1g-dev \
     && python3 -m pip install -r requirements.txt \
