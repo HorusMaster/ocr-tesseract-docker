@@ -11,19 +11,15 @@ RUN apt-get update && \
         python3-setuptools \
         tesseract-ocr \
         make \
-        gcc \
-        python-opencv \ 
+        gcc \        
         libopencv-dev \     
         libjpeg-dev \ 
         libpng-dev \ 
         libtiff-dev \     
-        libgtk2.0-dev \ 
-        python-numpy \ 
-        python-pycurl \ 
+        libgtk2.0-dev \         
         libatlas-base-dev \
         gfortran \
         webp \ 
-        python-opencv \ 
         qt5-default \
         libvtk6-dev \ 
         zlib1g-dev \
