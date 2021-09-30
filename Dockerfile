@@ -1,8 +1,8 @@
 FROM python:3.8-slim
 
-COPY ./entrypoint.sh /entrypoint.sh
-COPY ./app /app
-COPY ./requirements.txt /requirements.txt
+COPY . /app
+
+WORKDIR /app
 
 RUN apt-get update && \
     apt-get install -y \
