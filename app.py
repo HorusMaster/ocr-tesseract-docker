@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from werkzeug import secure_filename
+# from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 import os
 import sys
 from PIL import Image
@@ -58,4 +59,4 @@ def upload_file():
       return render_template("uploaded.html", displaytext=text, fname=filename)
 
 if __name__ == '__main__':
-   app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
