@@ -12,6 +12,21 @@ RUN apt-get update && \
         tesseract-ocr \
         make \
         gcc \
+        python-opencv \ 
+        libopencv-dev \     
+        libjpeg-dev \ 
+        libpng-dev \ 
+        libtiff-dev \     
+        libgtk2.0-dev \ 
+        python-numpy \ 
+        python-pycurl \ 
+        libatlas-base-dev \
+        gfortran \
+        webp \ 
+        python-opencv \ 
+        qt5-default \
+        libvtk6-dev \ 
+        zlib1g-dev \
     && python3 -m pip install -r requirements.txt \
     && apt-get remove -y --purge make gcc build-essential \
     && apt-get autoremove -y \
