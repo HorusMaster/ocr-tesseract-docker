@@ -1,13 +1,13 @@
 certifi==2018.11.29
 Click==7.0
-Flask==1.0.2
+Flask==1.0.3
 gunicorn==19.9.0
 itsdangerous==1.1.0
 Jinja2>=2.10.1
-MarkupSafe==1.1.0
-numpy==1.15.4
+MarkupSafe>=2.0
+numpy>=1.17.3
 # opencv-contrib-python==3.4.4.19
 opencv-contrib-python
 pillow>=6.2.0
-pytesseract==0.2.6
+pytesseract==0.3.8
 werkzeug==0.15.3
