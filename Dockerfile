@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-MAINTAINER Rick Torzynski "ricktorzynski@gmail.com"
 RUN apt-get update -y
 RUN apt-get install -y python3-pip python-dev build-essential
 RUN apt update && apt install -y libsm6 libxext6
