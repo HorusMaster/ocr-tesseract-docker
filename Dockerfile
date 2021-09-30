@@ -1,13 +1,22 @@
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install -y python3-pip python-dev build-essential
-RUN apt update && apt install -y libsm6 libxext6
-RUN apt-get -y install tesseract-ocr
-COPY . /app
-WORKDIR /app
-RUN pip install pillow
-RUN pip install pytesseract
-RUN pip install opencv-contrib-python
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+FROM python:3.8-slim
+
+COPY ./entrypoint.sh /entrypoint.sh
+COPY ./app /app
+COPY ./requirements.txt /requirements.txt
+
+RUN apt-get update && \
+    apt-get install -y \
+        build-essential \
+        python3-dev \
+        python3-setuptools \
+        tesseract-ocr \
+        make \
+        gcc \
+    && python3 -m pip install -r requirements.txt \
+    && apt-get remove -y --purge make gcc build-essential \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN chmod +x entrypoint.sh
+
+CMD ["./entrypoint.sh"]
