@@ -1,9 +1,9 @@
 certifi==2018.11.29
 Click==7.0
 Flask==1.0.3
-gunicorn==19.9.0
+gunicorn
 itsdangerous==1.1.0
-Jinja2>=2.10.1
+jinja2
 MarkupSafe>=2.0
 numpy>=1.17.3
 # opencv-contrib-python==3.4.4.19
