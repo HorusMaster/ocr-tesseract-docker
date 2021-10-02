@@ -25,8 +25,6 @@ RUN apt-get update && \
         # zlib1g-dev \
     && python3 -m pip install -r requirements.txt    
 
-ENTRYPOINT ["python"]
-
 # STEP 5: Declare environment variables
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=development 
