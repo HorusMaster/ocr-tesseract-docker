@@ -1,0 +1,14 @@
+uvicorn app.main:app --reload 
+pip install -r requirements.txt
+
+set FLASK_ENV=development 
+set FLASK_APP=app.py 
+flask run
+
+&& apt-get remove -y --purge make gcc build-essential \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+
+docker build -t ocr-teseract .
+docker run -it --publish 5000:5000 ocr-teseract

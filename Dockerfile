@@ -12,25 +12,12 @@ RUN apt-get update && \
         tesseract-ocr \
         make \
         gcc \        
-        python3-opencv \ 
-        # libopencv-dev \     
-        # libjpeg-dev \ 
-        # libpng-dev \ 
-        # libtiff-dev \     
-        # libgtk2.0-dev \         
-        # libatlas-base-dev \
-        # gfortran \
-        # webp \ 
-        # libvtk6-dev \ 
-        # zlib1g-dev \
-    && python3 -m pip install -r requirements.txt    
+        python3-opencv \    
+    && python3 -m pip install -r requirements.txt \
+    && apt-get remove -y --purge make gcc build-essential \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*  
 
-# STEP 5: Declare environment variables
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=development 
+RUN chmod +x entrypoint.sh
 
-# STEP 6: Expose the port that Flask is running on
-EXPOSE 5000 
-
-# STEP 7: Run Flask!
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["./entrypoint.sh"]
